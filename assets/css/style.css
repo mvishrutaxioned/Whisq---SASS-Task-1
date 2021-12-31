@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Damion&family=Open+Sans:wght@400;600;700&display=swap");
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -83,7 +84,7 @@ sub {
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: sans-serif; }
+  font-family: 'Open Sans', sans-serif; }
 
 a {
   display: inline-block;
@@ -118,4 +119,115 @@ li {
   max-width: 1350px;
   width: 86%;
   margin: 0 auto; }
+
+header .wrapper {
+  width: 88%;
+  padding: 16px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  header .wrapper h1 {
+    width: 20%; }
+  header .wrapper img {
+    width: 105%; }
+  header .wrapper nav {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    header .wrapper nav .navbar {
+      width: 90%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      header .wrapper nav .navbar > li:nth-child(1) {
+        margin-right: 15%; }
+      header .wrapper nav .navbar > li:nth-child(2) {
+        margin-right: 15%; }
+      header .wrapper nav .navbar > li:nth-child(3) {
+        margin-right: 9%; }
+      header .wrapper nav .navbar > li > a {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 10px 0;
+        position: relative;
+        color: #000;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: .8px;
+        -webkit-transition: .5s ease;
+        transition: .5s ease; }
+        header .wrapper nav .navbar > li > a:hover {
+          color: #ba5c80; }
+      header .wrapper nav .navbar > li:nth-child(1) > a::after,
+      header .wrapper nav .navbar > li:nth-child(2) > a::after {
+        content: '\f078';
+        margin-left: 15px;
+        padding: 10px 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        -webkit-transition: .5s ease;
+        transition: .5s ease;
+        text-indent: 0;
+        font-size: 20px; }
+      header .wrapper nav .navbar .list {
+        width: auto;
+        padding: 10px 5px;
+        display: none;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        position: absolute;
+        top: 15%;
+        background-color: #dfdfdf;
+        z-index: 10; }
+        header .wrapper nav .navbar .list li a {
+          padding: 10px 8px;
+          border-radius: 4px;
+          color: #000;
+          font-weight: 600;
+          font-size: 12px; }
+        header .wrapper nav .navbar .list li a:hover {
+          background: #fff; }
+      header .wrapper nav .navbar > li:hover .list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+    header .wrapper nav .search {
+      margin-left: auto;
+      display: inline;
+      font-size: 0; }
+      header .wrapper nav .search::after {
+        content: '\f002';
+        color: #000;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        -webkit-transition: .5s ease;
+        transition: .5s ease;
+        text-indent: 0;
+        font-size: 19px; }
+      header .wrapper nav .search:hover::after {
+        color: #ba5c80; }
+
+.none {
+  display: none; }
 /*# sourceMappingURL=style.css.map */

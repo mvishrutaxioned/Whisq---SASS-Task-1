@@ -1,0 +1,11 @@
+@mixin flex() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin icon() {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    transition: .5s ease;
+    text-indent: 0;
+}
