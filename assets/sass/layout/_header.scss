@@ -1,0 +1,277 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+/*=================================
+  Header styling starts here
+=================================*/
+.stopscroll {
+  @include responsive($custom-size) {
+    overflow-y: hidden;
+  }
+}
+
+body {
+
+  font-family: 'Open Sans';
+  a {
+    font-family: 'Open Sans';
+
+    @include transition(color, 500ms);
+  }
+
+  header {
+
+    .header-top {
+      background-color: $secondary-black;
+
+      .wrapper {
+        padding: 6px 0 10px;
+
+        @include flex;
+
+        a {
+          color: $secondary-color;
+          font-size: 11px;
+
+          &:hover { color: $primary-color; }
+        }
+
+        .contact {
+          margin-left: 10px;
+
+          span {
+            a {
+
+              &:before {
+                  content: "\f0e0";
+                  margin-right: 11px;
+                  font-family: "Font Awesome 5 Free";
+                  font-weight: 600;
+              }
+
+            }
+          }
+
+          .phone {
+            margin-left: 14px;
+
+            a {
+              &:before {
+                content: "\f095";
+              }
+            }
+          }
+        }
+
+        .social-media {
+          padding-top: 4px;
+
+          .facebook,
+          .twitter,
+          .insta,
+          .linkedin {
+            border: 0;
+            background-color: transparent;
+            text-indent: -9999px;
+
+            &::before {
+              content: "\f09a";
+              margin-left: 14px;
+              vertical-align: middle;
+              float: left;
+              font-family: 'Font Awesome 5 Brands';
+              text-indent: 0px;
+            }
+          }
+          
+          .twitter {
+            &::before { content: "\f099"; }
+          }
+          
+          .insta {
+            &::before { content: "\f16d"; }
+          }
+          
+          .linkedin {
+            &::before { content: "\f08c"; }
+          }
+        }
+      }
+    }
+    
+    .header-bottom {
+      padding: 7px 0 020px;
+        
+      .wrapper {
+        @include flex;
+        @include responsive($phone) { display: block; }
+        @include responsive($custom-size) {
+          display: block;
+          text-align: center;
+        }
+        
+        h1 {
+          margin-right: 15px;
+          a {
+            color: #63AD6E;
+            text-transform: capitalize;
+            font-weight: 600;
+            font-size: 50px;
+          }
+        }
+        
+        .header-right {
+          margin: 28px 0 0 0;
+          
+          span {
+            position: relative;
+            
+            .count {
+              padding: 3px 10px;
+              border-radius: 12px;
+              position: absolute;
+              top: -20px;
+              left: 7px;
+              background-color: #CFD6E1;
+              font-size: 12px;
+              font-weight: 700;
+            }
+          }
+          
+          .search, .cart, .people {
+            display: inline-block;
+            color: $black;
+            font-size: 20px;
+            text-indent: -9999px;
+            
+            @include transition(color, 500ms);
+            
+            &:after {
+              content: '\f002';
+              margin-right: 21px;
+              text-indent: 0;
+              font-weight: 700;
+              font-family: 'Font Awesome 5 Free';
+              float: left;
+            }
+            
+            &:hover { color: $primary-color; }
+          }
+          
+          .cart {
+            &:after {
+              content: '\f218';
+            }
+          }
+          
+          .people {
+            &:after {
+              content: '\f007';
+            }
+          }
+        }
+        
+        .topnav {
+          @include flex;
+          
+          @include responsive($custom-size) {
+            width: 100%;
+            margin-bottom: 15px;
+            display: none;
+          }
+
+          a {
+            color: #663E7D;
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: capitalize;
+            letter-spacing: -1px;
+            
+            &:hover {
+              color: $primary-color;
+              text-decoration: underline;
+            }
+          }
+        }
+        
+        .topnavchange {
+          @include responsive($custom-size) {
+            padding: 0 0 20px 0;
+            margin-left: 10%;
+            display: block;
+            flex-direction: column;
+            float: right;
+            text-align: center;
+          }
+        }
+        
+        .lichange {
+          @include responsive($custom-size) {
+            width: 100%;
+            margin: 5px 0;
+            display: inline-block;
+            position: relative;
+          }
+        }
+        
+        nav {
+          margin-top: 27px;
+          position: relative;
+          flex-basis: 48%;
+          
+          @include vendor(flex-basis, 48%);
+        }
+        
+        .menu {
+          width: 13px;
+          display: none;
+          position: absolute; 
+          z-index: 100;
+          top: -18px;
+          right: 20px;
+          
+          @include responsive($custom-size) { display: block; }
+        }
+        
+        .menu-text-hide { display: none; }
+        
+        .menu-text {
+          position: absolute;
+          top: -2px;
+          left: 16px;
+          font-size: 13px;
+        }
+        
+        .bar {
+          width: 100%;
+          height: 2px;
+          margin-bottom: 2px;
+          border-radius: 1.5px;
+          display: revert;
+          background-color: $primary-color;
+
+          @include transition(transform, 280ms);
+        }
+        
+        .bar1change {
+          @include responsive($custom-size) {
+            display: block;
+            transform: rotate(45deg) translate(3px,3px);
+          }
+        }
+        
+        .bar3change {
+          @include responsive($custom-size) {
+            display: block;
+            
+            @include transformation(rotate, -45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*=================================
+  Header styling ends here
+=================================*/ 

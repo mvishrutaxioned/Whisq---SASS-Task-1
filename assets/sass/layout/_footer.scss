@@ -1,0 +1,250 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+/*=================================
+  footer styling starts here
+=================================*/ 
+footer {
+  color: #CFD6E1;
+  
+  a { color: #CFD6E1; }
+  
+  .footer-top {
+    padding: 52px 0 0;
+    background-color: #212934;
+    
+    .wrapper {
+      .parts {
+        @include flex;
+        @include partician;
+        
+        @include responsive($custom-size) {
+          justify-content: center;
+          text-align: center;
+        }
+        
+        h4 {
+          margin-bottom: 10px;
+          text-transform: capitalize;
+          font-size: 32px;
+          font-weight: 300;
+          line-height: 35px;
+
+          @include partician;
+        }
+        
+        .contacts {
+          h3 {
+            margin-bottom: 10px;
+
+            @include partician;
+            
+            a {
+              color: $primary-color;
+              font-size: 31px;
+              font-weight: 600;
+              line-height: 35px;
+              text-transform: capitalize;
+              
+              &:hover { text-decoration: underline; }
+            }
+          }
+          
+          .location {
+            &::before {
+              content: "\f041";
+              margin-right: 11px;
+              font-family: "Font Awesome 5 Free";
+              font-weight: 600;
+            }
+          }
+          
+          span {
+            display: block;
+            line-height: 40px;
+            
+            a {
+              &::before {
+                content: "\f0e0";
+                margin-right: 11px;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 600;
+              }
+              
+              &:hover { color: $primary-color; }
+            }
+          }
+          
+          .phone {
+            a {
+              &::before { content: "\f095"; }
+            }
+          }
+        }
+        
+        .products, .links {
+          ul {
+            li {
+              display: block;
+              font-size: 17px;
+              font-weight: 300;
+              line-height: 40px;
+              text-transform: capitalize;
+              
+              a:hover { color: $primary-color; }
+            }
+          }
+        }
+        
+        div {
+          flex-basis: 31.5%;
+          
+          @include vendor(flex-basis, 31.5%);
+          @include responsive($custom-size) {
+            margin-bottom: 20px;
+            flex-basis: 100%;
+            
+            @include vendor(flex-basis, 100%);
+          }
+        }
+      }
+      
+      .subscribe-us {
+        padding: 32px 0 41px;
+        
+        @include flex;
+        @include responsive($custom-size) {
+          justify-content: center;
+          text-align: center;
+        }
+        
+        .social-media {
+          @include responsive($custom-size) {
+            margin-bottom: 20px;
+            flex-basis: 100%;
+            
+            @include vendor(flex-basis, 100%);
+          
+          }
+          
+          .facebook,
+          .twitter,
+          .insta,
+          .linkedin {
+            border: 0;
+            background-color: transparent;
+            text-indent: -9999px;
+            
+            &::before {
+              content: "\f09a";
+              padding: 10px 11px;
+              margin-right: 7px;
+              border: 2px solid #2A313C;
+              border-radius: 50%;
+              vertical-align: middle;
+              font-family: "Font Awesome 5 Brands";
+              float: left;
+              font-size: 24px;
+              text-indent: 0px;
+            }
+            
+            &:hover { color:$primary-color; }
+          }
+          
+          .twitter {
+            &::before { content: "\f099"; }
+          }
+          
+          .insta {
+            &::before {
+              content: "\f16d";
+              padding: 10px 13px;
+            }
+          }
+          
+          .linkedin {
+            &::before {
+              content: "\f08c";
+              padding: 10px 13px;
+            }
+          }
+        }
+        
+        form {
+          @include responsive($custom-size) {
+            margin-bottom: 20px;
+            flex-basis: 100%;
+
+            @include vendor(flex-basis, 100%);
+          }
+          
+          .subscribeEmail-container,
+          & > div:nth-child(2) { display: inline-block; }
+          
+          input,
+          button {
+            padding: 8px 37px 8px 15px;
+            border: 1px solid #2A313C;
+            border-radius: 10px 0 0 10px;
+            border-right: 0;
+            outline: 0;
+            background-color: transparent;
+            color: $white;
+            font-family: 'Open Sans';
+            font-size: 17px;
+            font-weight: 400;
+
+            @include responsive($iphone) { padding: 8px 5px 8px 5px; }
+
+            @include responsive(400px) {
+              padding: 8px 25px 8px 15px;
+              margin-bottom: 10px;
+              border: 1px solid #2A313C;
+              border-radius: 15px;
+            }
+          }
+          
+          .val-err{
+            padding-left: 15px;
+            display: table-cell;
+            color: red;
+            font-size: 15px;
+          }
+          
+          button {
+            padding: 9px 15px;
+            border: 0;
+            border-radius: 0 10px 10px 0;
+            background-color: $primary-color;
+            color: #ADCAB2;
+            font-weight: 300;
+            
+            &:hover { opacity: .5; }
+            
+            @include responsive(400px) { border-radius: 15px; }
+          }
+        }
+      }
+    }
+  }
+  
+  .footer-bottom {
+    padding: 28px 0 34px;
+    background-color: #1D242D;
+
+    p {
+      font-size: 18px;
+
+      @include responsive($custom-size) { text-align: center; }
+      
+      a {
+        text-decoration: underline;
+        
+        &:hover { color: $primary-color; }
+      }
+    }
+  }
+}
+    
+/*=================================
+footer styling ends here
+=================================*/ 
