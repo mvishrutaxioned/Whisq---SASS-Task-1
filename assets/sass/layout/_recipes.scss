@@ -5,6 +5,8 @@
     h2, h3 {
         color: $primary;
         font-size: 34px;
+
+        @include responsive($iphone) { font-size: 24px; }
     }
 
     & > p {
@@ -14,26 +16,59 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 28px;
+
+        @include responsive($ipad) {
+            width: 90%;
+            margin: 10px auto;
+            font-size: 13px;
+            line-height: 18px;
+
+            @include responsive($iphone) {
+                width: 100%;
+                font-size: 12px;
+            }
+        }
     }
 
     ul {
         @include flex;
         justify-content: space-between;
         gap: 6%;
+
+        @include responsive($ipad) { gap: 1%; }
+
+        @include responsive($phone) {
+            flex-direction: column;
+            gap: 0;
+            justify-content: center;
+        }
     }
 
     li {
         width: 47%;
         margin-top: 30px;
+        
+        @include responsive($ipad) { width: 48%; }
+        @include responsive($phone) { width: 60%; }
+        @include responsive($iphone) { width: 85%; }
 
         .recipe-content {
             padding: 54px 15%;
             border: 2px solid #ececec;
             border-top: none;
 
+            @include responsive($ipad) { padding: 30px 8%; }
+
             h3 {
                 margin-bottom: 50px;
                 font-size: 33px;
+
+                @include responsive($ipad) { margin-bottom: 15px; }
+                @include responsive($ipad) { font-size: 24px; }
+
+                @include responsive($phone) {
+                    font-size: 18px;
+                }
             }
 
             p {
@@ -45,6 +80,8 @@
                 line-height: 25px;
                 letter-spacing: .5px;
 
+                @include responsive($iphone) { font-size: 13px; }
+
                 &::before {
                     content: '\f111';
                     position: absolute;
@@ -52,6 +89,10 @@
                     left: -25px;
                     @include icon;
                     font-size: 6px;
+
+                    @include responsive($ipad) { left: -15px; }
+                    @include responsive($iphone) { left: -20px; }
+                    @include responsive($small-iphone) { left: -15px; }
                 }
             }
         }
