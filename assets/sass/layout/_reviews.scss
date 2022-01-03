@@ -18,6 +18,7 @@
         }
 
         @include responsive($phone) { width: 80%; }
+
         @include responsive($iphone) {
             width: 90%;
             top: 15%;
@@ -81,10 +82,10 @@
                 &::before {
                     content: '';
                     padding: 0 12px;
-                    position: relative;
-                    right: 15px;
                     bottom: 10px;
                     border-bottom: 2px solid $black;
+                    position: relative;
+                    right: 15px;
 
                     @include responsive($iphone) {
                         padding: 0 7px;
@@ -127,6 +128,7 @@
 
             @include responsive($small-iphone) { margin: 0 1px; }
             &:hover { opacity: .6; }
+            @include responsive($phone) { &:hover { opacity: .2; } }
         }
 
         li.slick-active button { opacity: .6; }

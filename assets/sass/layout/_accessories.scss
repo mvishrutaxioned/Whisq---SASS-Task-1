@@ -35,5 +35,6 @@
         }
 
         &:hover { color: #666; }
+        @include responsive($phone) { &:hover { color: $black; } }
     }
 }

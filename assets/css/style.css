@@ -205,12 +205,9 @@ header .wrapper {
         z-index: 10;
         -webkit-transform: translateX(200%);
                 transform: translateX(200%); } }
-    @media screen and (max-width: 767px) {
-      header .wrapper nav {
-        width: 70%; } }
     @media screen and (max-width: 550px) {
       header .wrapper nav {
-        width: 80%; } }
+        width: 60%; } }
     header .wrapper nav .navbar {
       width: 90%;
       display: -webkit-box;
@@ -236,16 +233,19 @@ header .wrapper {
           -webkit-box-pack: center;
               -ms-flex-pack: center;
                   justify-content: center; } }
-      header .wrapper nav .navbar > li:nth-child(1) {
-        margin-right: 15%; }
-        @media screen and (max-width: 995px) {
-          header .wrapper nav .navbar > li:nth-child(1) {
-            margin-right: 0; } }
+      header .wrapper nav .navbar > li:nth-child(1),
       header .wrapper nav .navbar > li:nth-child(2) {
         margin-right: 15%; }
         @media screen and (max-width: 995px) {
+          header .wrapper nav .navbar > li:nth-child(1),
           header .wrapper nav .navbar > li:nth-child(2) {
             margin-right: 0; } }
+      @media screen and (max-width: 995px) {
+        header .wrapper nav .navbar > li:nth-child(1) .list {
+          top: 40%; } }
+      @media screen and (max-width: 995px) {
+        header .wrapper nav .navbar > li:nth-child(2) .list {
+          top: 46%; } }
       header .wrapper nav .navbar > li:nth-child(3) {
         margin-right: 9%; }
         @media screen and (max-width: 995px) {
@@ -272,11 +272,13 @@ header .wrapper {
             font-size: 12px; } }
         header .wrapper nav .navbar > li > a:hover {
           color: #ba5c80; }
+        @media screen and (max-width: 767px) {
+          header .wrapper nav .navbar > li > a:hover {
+            color: #000; } }
       header .wrapper nav .navbar > li:nth-child(1) > a::after,
       header .wrapper nav .navbar > li:nth-child(2) > a::after {
         content: '\f078';
-        margin-left: 15px;
-        padding: 10px 0;
+        padding: 10px 0 10px 15px;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -288,6 +290,11 @@ header .wrapper {
         font-size: 20px;
         -webkit-transition: 0s;
         transition: 0s; }
+        @media screen and (max-width: 995px) {
+          header .wrapper nav .navbar > li:nth-child(1) > a::after,
+          header .wrapper nav .navbar > li:nth-child(2) > a::after {
+            padding: 12px 0 0 10px;
+            font-size: 12px; } }
       header .wrapper nav .navbar .list {
         width: auto;
         padding: 10px 5px;
@@ -301,7 +308,7 @@ header .wrapper {
                 align-items: center;
         position: absolute;
         top: 15%;
-        background-color: #dfdfdf;
+        background-color: #ececec;
         z-index: 10; }
         header .wrapper nav .navbar .list li a {
           padding: 10px 8px;
@@ -311,6 +318,9 @@ header .wrapper {
           font-size: 12px; }
         header .wrapper nav .navbar .list li a:hover {
           background: #fff; }
+        @media screen and (max-width: 767px) {
+          header .wrapper nav .navbar .list li a:hover {
+            background: #ececec; } }
       header .wrapper nav .navbar > li:hover .list {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -336,6 +346,9 @@ header .wrapper {
             font-size: 14px; } }
       header .wrapper nav .search:hover::after {
         color: #ba5c80; }
+      @media screen and (max-width: 767px) {
+        header .wrapper nav .search:hover::after {
+          color: #000; } }
 
 .none {
   display: none; }
@@ -366,11 +379,6 @@ header .wrapper {
   left: 0;
   text-align: center;
   z-index: 20; }
-  @media screen and (max-width: 550px) {
-    .banner .wrapper {
-      -webkit-box-pack: start;
-          -ms-flex-pack: start;
-              justify-content: flex-start; } }
   @media screen and (max-width: 1280px) {
     .banner .wrapper {
       width: 50%; } }
@@ -383,21 +391,26 @@ header .wrapper {
   @media screen and (max-width: 550px) {
     .banner .wrapper {
       width: 100%; } }
+  @media screen and (max-width: 550px) {
+    .banner .wrapper {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; } }
   .banner .wrapper h2 {
     margin-top: 15px;
     font-weight: 400;
     font-family: "Damion", sans-serif;
     font-size: 53px;
     letter-spacing: .5px; }
+    @media screen and (max-width: 320px) {
+      .banner .wrapper h2 {
+        margin-top: 5px; } }
     @media screen and (max-width: 995px) {
       .banner .wrapper h2 {
         font-size: 40px; } }
     @media screen and (max-width: 550px) {
       .banner .wrapper h2 {
         font-size: 20px; } }
-    @media screen and (max-width: 320px) {
-      .banner .wrapper h2 {
-        margin-top: 5px; } }
   .banner .wrapper p {
     width: 90%;
     margin-top: 35px;
@@ -475,6 +488,9 @@ header .wrapper {
         height: 6px; } }
     .banner .slick-dots button:hover {
       opacity: 1; }
+    @media screen and (max-width: 767px) {
+      .banner .slick-dots button:hover {
+        opacity: .3; } }
   .banner .slick-dots li.slick-active button {
     opacity: 1; }
 
@@ -524,6 +540,9 @@ header .wrapper {
         font-size: 16px; } }
     .accessories .wrapper a:hover {
       color: #666; }
+    @media screen and (max-width: 767px) {
+      .accessories .wrapper a:hover {
+        color: #000; } }
 
 .review {
   position: relative; }
@@ -618,10 +637,10 @@ header .wrapper {
         .review > ul li h2::before {
           content: '';
           padding: 0 12px;
-          position: relative;
-          right: 15px;
           bottom: 10px;
-          border-bottom: 2px solid #000; }
+          border-bottom: 2px solid #000;
+          position: relative;
+          right: 15px; }
           @media screen and (max-width: 550px) {
             .review > ul li h2::before {
               padding: 0 7px;
@@ -664,17 +683,20 @@ header .wrapper {
           margin: 0 1px; } }
       .review .slick-dots button:hover {
         opacity: .6; }
+      @media screen and (max-width: 767px) {
+        .review .slick-dots button:hover {
+          opacity: .2; } }
     .review .slick-dots li.slick-active button {
       opacity: .6; }
 
 .recipes .wrapper {
   margin: 40px auto;
   text-align: center; }
-  .recipes .wrapper h2, .recipes .wrapper h3 {
+  .recipes .wrapper h2, .recipes .wrapper a {
     color: #ba5c80;
     font-size: 34px; }
     @media screen and (max-width: 550px) {
-      .recipes .wrapper h2, .recipes .wrapper h3 {
+      .recipes .wrapper h2, .recipes .wrapper a {
         font-size: 24px; } }
   .recipes .wrapper > p {
     width: 83%;
@@ -730,27 +752,68 @@ header .wrapper {
       .recipes .wrapper li {
         width: 85%; } }
     .recipes .wrapper li .recipe-content {
-      padding: 54px 15%;
+      padding: 46px 15% 54px 15%;
       border: 2px solid #ececec;
-      border-top: none; }
+      border-top: none;
+      position: relative; }
       @media screen and (max-width: 995px) {
         .recipes .wrapper li .recipe-content {
           padding: 30px 8%; } }
       @media screen and (max-width: 550px) {
         .recipes .wrapper li .recipe-content {
           padding: 15px 8%; } }
-      .recipes .wrapper li .recipe-content h3 {
+      .recipes .wrapper li .recipe-content .right {
+        position: absolute;
+        top: -15px;
+        right: 25px;
+        font-size: 0; }
+        @media screen and (max-width: 550px) {
+          .recipes .wrapper li .recipe-content .right {
+            top: -8px;
+            right: 10px; } }
+        .recipes .wrapper li .recipe-content .right::after {
+          content: '\f054';
+          padding: 16px 20px;
+          border-radius: 50%;
+          background: #ba5c80;
+          color: #fff;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 600;
+          -webkit-transition: .5s ease;
+          transition: .5s ease;
+          text-indent: 0;
+          font-size: 24px;
+          transition: .5s ease;
+          cursor: pointer; }
+          @media screen and (max-width: 550px) {
+            .recipes .wrapper li .recipe-content .right::after {
+              padding: 10px 14px;
+              font-size: 16px; } }
+        .recipes .wrapper li .recipe-content .right:hover::after {
+          background: #c9809c; }
+        @media screen and (max-width: 767px) {
+          .recipes .wrapper li .recipe-content .right:hover::after {
+            background: #ba5c80; } }
+      .recipes .wrapper li .recipe-content a {
         margin-bottom: 50px;
-        font-size: 33px; }
+        font-weight: 700;
+        font-size: 33px;
+        -webkit-transition: .5s ease;
+        transition: .5s ease; }
         @media screen and (max-width: 995px) {
-          .recipes .wrapper li .recipe-content h3 {
+          .recipes .wrapper li .recipe-content a {
             margin-bottom: 15px; } }
         @media screen and (max-width: 995px) {
-          .recipes .wrapper li .recipe-content h3 {
+          .recipes .wrapper li .recipe-content a {
             font-size: 24px; } }
         @media screen and (max-width: 767px) {
-          .recipes .wrapper li .recipe-content h3 {
+          .recipes .wrapper li .recipe-content a {
             font-size: 18px; } }
+        .recipes .wrapper li .recipe-content a:hover {
+          color: #c9809c; }
+        @media screen and (max-width: 767px) {
+          .recipes .wrapper li .recipe-content a:hover {
+            color: #ba5c80; } }
       .recipes .wrapper li .recipe-content p {
         position: relative;
         color: #333;
@@ -828,8 +891,8 @@ header .wrapper {
     padding: 12px 35px;
     margin: 50px auto;
     border-radius: 5px;
-    color: #fff;
     background-color: #ba5c80;
+    color: #fff;
     font-weight: 600;
     font-size: 11px;
     -webkit-transition: .5s ease;
@@ -840,6 +903,9 @@ header .wrapper {
         margin: 20px auto; } }
     .gallery a:hover {
       background: #c9809c; }
+    @media screen and (max-width: 767px) {
+      .gallery a:hover {
+        background: #ba5c80; } }
 
 footer {
   padding: 5px 0 35px 0;

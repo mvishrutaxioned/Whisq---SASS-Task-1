@@ -7,7 +7,6 @@
         width: 100%;
         @include flex;
         justify-content: center;
-        
         @include responsive($phone) { flex-wrap: wrap; }
 
         @include responsive($iphone) {
@@ -28,8 +27,8 @@
         padding: 12px 35px;
         margin: 50px auto;
         border-radius: 5px;
-        color: $white;
         background-color: $primary;
+        color: $white;
         font-weight: 600;
         font-size: 11px;
         transition: .5s ease;
@@ -40,5 +39,6 @@
         }
 
         &:hover { background: lighten($primary, 10%); }
+        @include responsive($phone) { &:hover { background: $primary; } }
     }
 }

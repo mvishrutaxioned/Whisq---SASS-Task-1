@@ -1,17 +1,18 @@
 header .wrapper {
   width: 88%;
   padding: 16px 0;
+  
   @include responsive($ipad) {
     width: 95%;
     padding: 10px 0;
   }
+
   @include flex;
   justify-content: space-between;
 
   .menu,
   .close {
     display: none;
-
     @include responsive($ipad) { display: initial; }
   }
 
@@ -26,7 +27,6 @@ header .wrapper {
         @include icon;
         font-size: 20px;
       }
-
       @include responsive($iphone) { font-size: 15px; }
     }
   }
@@ -68,8 +68,7 @@ header .wrapper {
       transform: translateX(200%);
     }
 
-    @include responsive($phone) { width: 70%; }
-    @include responsive($iphone) { width: 80%; }
+    @include responsive($iphone) { width: 60%; }
 
     .navbar {
       width: 90%;
@@ -83,14 +82,28 @@ header .wrapper {
         justify-content: center;
       }
 
-      & > li:nth-child(1) {
-        margin-right: 15%;
-        @include responsive($ipad) { margin-right: 0; }
-      }
+      & > li:nth-child(1),
       & > li:nth-child(2) {
         margin-right: 15%;
         @include responsive($ipad) { margin-right: 0; }
       }
+
+      &> li:nth-child(1) {
+        .list {
+          @include responsive($ipad) {
+            top: 40%;
+          }
+        }
+      }
+
+      &> li:nth-child(2) {
+        .list {
+          @include responsive($ipad) {
+            top: 46%;
+          }
+        }
+      }
+
       & > li:nth-child(3) {
         margin-right: 9%;
         @include responsive($ipad) { margin-right: 0; }
@@ -115,21 +128,25 @@ header .wrapper {
         transition: .5s ease;
 
         @include responsive($phone) { font-size: 12px; }
-
         &:hover { color: $primary; }
+        @include responsive($phone) { &:hover {color: $black;} }
       }
 
       & > li:nth-child(1) > a::after,
       & > li:nth-child(2) > a::after {
         content: '\f078';
-        margin-left: 15px;
-        padding: 10px 0;
+        padding: 10px 0 10px 15px;
         position: absolute;
         top: 0;
         bottom: 0;
         @include icon;
         font-size: 20px;
         transition: 0s;
+
+        @include responsive($ipad) {
+          padding: 12px 0 0 10px;
+          font-size: 12px;
+        }
       }
 
       .list {
@@ -140,7 +157,7 @@ header .wrapper {
         align-items: center;
         position: absolute;
         top: 15%;
-        background-color: #dfdfdf;
+        background-color: $secondary;
         z-index: 10;
 
         li a {
@@ -152,6 +169,7 @@ header .wrapper {
         }
 
         li a:hover { background: $white; }
+        @include responsive($phone) { li a:hover {background: $secondary}; }
       }
 
       & > li:hover .list { display: flex; }
@@ -161,7 +179,6 @@ header .wrapper {
       margin-left: auto;
       display: inline;
       font-size: 0;
-
       @include responsive($ipad) { margin: 20px auto 0 auto; }
 
       &::after {
@@ -169,11 +186,11 @@ header .wrapper {
         color: $black;
         @include icon;
         font-size: 19px;
-
         @include responsive($phone) { font-size: 14px; }
       }
 
       &:hover::after { color: $primary; }
+      @include responsive($phone) { &:hover::after {color: $black;} }
     }
   }
 }

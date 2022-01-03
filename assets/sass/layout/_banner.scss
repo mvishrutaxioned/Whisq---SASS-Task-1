@@ -3,6 +3,10 @@
 
     .wrapper {
         width: 40%;
+        @include responsive($small-pc) { width: 50%; }
+        @include responsive($ipad) { width: 70%; }
+        @include responsive($phone) { width: 80%; }
+        @include responsive($iphone) { width: 100%; }
         margin: 0 auto;
         @include flex;
         flex-direction: column;
@@ -11,32 +15,26 @@
         @include absolute;
         text-align: center;
         z-index: 20;
-        @include responsive($small-pc) { width: 50%; }
-        @include responsive($ipad) { width: 70%; }
-        @include responsive($phone) { width: 80%; }
-        @include responsive($iphone) { width: 100%; }
 
         & h2 {
             margin-top: 15px;
+            @include responsive($small-iphone) { margin-top: 5px; }
             font-weight: 400;
             font-family: "Damion", sans-serif;
             font-size: 53px;
-            letter-spacing: .5px;
-
             @include responsive($ipad) { font-size: 40px; }
             @include responsive($iphone) { font-size: 20px;}
-            @include responsive($small-iphone) { margin-top: 5px; }
+            letter-spacing: .5px;
         }
 
         & p {
             width: 90%;
             margin-top: 35px;
+            @include responsive($ipad) { margin-top: 20px }
+            @include responsive($ipad) { margin-top: 10px }
             font-weight: 600;
             font-size: 14px;
             line-height: 22px;
-
-            @include responsive($ipad) { margin-top: 20px }
-            @include responsive($ipad) { margin-top: 10px }
 
             @include responsive($iphone) {
                 margin-top: 5px;
@@ -76,10 +74,9 @@
         position: absolute;
         right: 0;
         bottom: 30px;
-        left: 0;
-
         @include responsive($ipad) { bottom: 10px; }
         @include responsive($iphone) { bottom: 4px; }
+        left: 0;
 
         & button {
             width: 9px;
@@ -99,6 +96,7 @@
             }
 
             &:hover { opacity: 1; }
+            @include responsive($phone) { &:hover { opacity: .3; } }
         }
 
         & li.slick-active button { opacity: 1; }
