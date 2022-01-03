@@ -477,4 +477,36 @@ header .wrapper {
           transition: .5s ease;
           text-indent: 0;
           font-size: 6px; }
+
+.gallery {
+  margin: 50px auto 20px auto;
+  border-bottom: 2px solid #ececec;
+  text-align: center; }
+  .gallery ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .gallery li {
+    width: 100% / 4; }
+  .gallery img {
+    width: 100%; }
+  .gallery a {
+    padding: 12px 35px;
+    margin: 50px auto;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #ba5c80;
+    font-weight: 600;
+    font-size: 11px;
+    -webkit-transition: .5s ease;
+    transition: .5s ease; }
+    .gallery a:hover {
+      background: #c9809c; }
 /*# sourceMappingURL=style.css.map */

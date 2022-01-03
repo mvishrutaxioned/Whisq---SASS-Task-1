@@ -1,0 +1,27 @@
+.gallery {
+    margin: 50px auto 20px auto;
+    border-bottom: 2px solid $secondary;
+    text-align: center;
+
+    ul {
+        width: 100%;
+        @include flex;
+        justify-content: center;
+    }
+
+    li { width: 100% / 4; }
+    img { width: 100%; }
+
+    a {
+        padding: 12px 35px;
+        margin: 50px auto;
+        border-radius: 5px;
+        color: $white;
+        background-color: $primary;
+        font-weight: 600;
+        font-size: 11px;
+        transition: .5s ease;
+
+        &:hover { background: lighten($primary, 10%); }
+    }
+}
