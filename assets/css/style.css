@@ -363,18 +363,55 @@ header .wrapper {
   left: 0;
   text-align: center;
   z-index: 20; }
+  @media screen and (max-width: 550px) {
+    .banner .wrapper {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; } }
+  @media screen and (max-width: 1280px) {
+    .banner .wrapper {
+      width: 50%; } }
+  @media screen and (max-width: 995px) {
+    .banner .wrapper {
+      width: 70%; } }
+  @media screen and (max-width: 767px) {
+    .banner .wrapper {
+      width: 80%; } }
+  @media screen and (max-width: 550px) {
+    .banner .wrapper {
+      width: 100%; } }
   .banner .wrapper h2 {
     margin-top: 15px;
     font-weight: 400;
     font-family: "Damion", sans-serif;
     font-size: 53px;
     letter-spacing: .5px; }
+    @media screen and (max-width: 995px) {
+      .banner .wrapper h2 {
+        font-size: 40px; } }
+    @media screen and (max-width: 550px) {
+      .banner .wrapper h2 {
+        font-size: 20px; } }
+    @media screen and (max-width: 320px) {
+      .banner .wrapper h2 {
+        margin-top: 5px; } }
   .banner .wrapper p {
     width: 90%;
     margin-top: 35px;
     font-weight: 600;
     font-size: 14px;
     line-height: 22px; }
+    @media screen and (max-width: 995px) {
+      .banner .wrapper p {
+        margin-top: 20px; } }
+    @media screen and (max-width: 995px) {
+      .banner .wrapper p {
+        margin-top: 10px; } }
+    @media screen and (max-width: 550px) {
+      .banner .wrapper p {
+        margin-top: 5px;
+        font-size: 10px;
+        line-height: 13px; } }
   .banner .wrapper a {
     padding: 11px 28px;
     margin-top: 40px;
@@ -385,6 +422,15 @@ header .wrapper {
     font-size: 11px;
     -webkit-transition: .5s ease;
     transition: .5s ease; }
+    @media screen and (max-width: 995px) {
+      .banner .wrapper a {
+        margin-top: 20px;
+        padding: 8px 15px; } }
+    @media screen and (max-width: 550px) {
+      .banner .wrapper a {
+        padding: 5px 12px;
+        margin-top: 5px;
+        font-size: 8px; } }
     .banner .wrapper a:hover {
       background: #e6e6e6; }
 
@@ -402,6 +448,12 @@ header .wrapper {
   right: 0;
   bottom: 30px;
   left: 0; }
+  @media screen and (max-width: 995px) {
+    .banner .slick-dots {
+      bottom: 10px; } }
+  @media screen and (max-width: 550px) {
+    .banner .slick-dots {
+      bottom: 4px; } }
   .banner .slick-dots button {
     width: 9px;
     height: 9px;
@@ -414,6 +466,10 @@ header .wrapper {
     opacity: .3;
     -webkit-transition: .5s ease;
     transition: .5s ease; }
+    @media screen and (max-width: 550px) {
+      .banner .slick-dots button {
+        width: 6px;
+        height: 6px; } }
     .banner .slick-dots button:hover {
       opacity: 1; }
   .banner .slick-dots li.slick-active button {

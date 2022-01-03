@@ -7,9 +7,14 @@
         @include flex;
         flex-direction: column;
         justify-content: center;
+        @include responsive($iphone) { justify-content: flex-start; }
         @include absolute;
         text-align: center;
         z-index: 20;
+        @include responsive($small-pc) { width: 50%; }
+        @include responsive($ipad) { width: 70%; }
+        @include responsive($phone) { width: 80%; }
+        @include responsive($iphone) { width: 100%; }
 
         & h2 {
             margin-top: 15px;
@@ -17,6 +22,10 @@
             font-family: "Damion", sans-serif;
             font-size: 53px;
             letter-spacing: .5px;
+
+            @include responsive($ipad) { font-size: 40px; }
+            @include responsive($iphone) { font-size: 20px;}
+            @include responsive($small-iphone) { margin-top: 5px; }
         }
 
         & p {
@@ -25,6 +34,15 @@
             font-weight: 600;
             font-size: 14px;
             line-height: 22px;
+
+            @include responsive($ipad) { margin-top: 20px }
+            @include responsive($ipad) { margin-top: 10px }
+
+            @include responsive($iphone) {
+                margin-top: 5px;
+                font-size: 10px;
+                line-height: 13px;
+            }
         }
 
         & a {
@@ -36,6 +54,17 @@
             font-weight: 800;
             font-size: 11px;
             transition: .5s ease;
+
+            @include responsive($ipad) {
+                margin-top: 20px;
+                padding: 8px 15px;
+            }
+
+            @include responsive($iphone) {
+                padding: 5px 12px;
+                margin-top: 5px;
+                font-size: 8px;
+            }
 
             &:hover { background: darken($white, 10%); }
         }
@@ -49,6 +78,9 @@
         bottom: 30px;
         left: 0;
 
+        @include responsive($ipad) { bottom: 10px; }
+        @include responsive($iphone) { bottom: 4px; }
+
         & button {
             width: 9px;
             height: 9px;
@@ -60,6 +92,11 @@
             font-size: 0;
             opacity: .3;
             transition: .5s ease;
+
+            @include responsive($iphone) {
+                width: 6px;
+                height: 6px;
+            }
 
             &:hover { opacity: 1; }
         }
