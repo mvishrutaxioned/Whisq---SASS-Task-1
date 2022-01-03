@@ -117,7 +117,7 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1350px;
-  width: 86%;
+  width: 94%;
   margin: 0 auto; }
 
 header .wrapper {
@@ -184,7 +184,9 @@ header .wrapper {
         -webkit-transition: .5s ease;
         transition: .5s ease;
         text-indent: 0;
-        font-size: 20px; }
+        font-size: 20px;
+        -webkit-transition: 0s;
+        transition: 0s; }
       header .wrapper nav .navbar .list {
         width: auto;
         padding: 10px 5px;
@@ -230,4 +232,86 @@ header .wrapper {
 
 .none {
   display: none; }
+
+.banner li {
+  position: relative; }
+
+.banner .wrapper {
+  width: 40%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  z-index: 20; }
+  .banner .wrapper h2 {
+    margin-top: 15px;
+    font-weight: 400;
+    font-family: "Damion", sans-serif;
+    font-size: 53px;
+    letter-spacing: .5px; }
+  .banner .wrapper p {
+    width: 90%;
+    margin-top: 35px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px; }
+  .banner .wrapper a {
+    padding: 11px 28px;
+    margin-top: 40px;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+    font-weight: 800;
+    font-size: 11px;
+    -webkit-transition: .5s ease;
+    transition: .5s ease; }
+    .banner .wrapper a:hover {
+      background: #e6e6e6; }
+
+.banner .slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  left: 0; }
+  .banner .slick-dots button {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    margin: 0 2px;
+    border: none;
+    border-radius: 50%;
+    background: #000;
+    font-size: 0;
+    opacity: .3;
+    -webkit-transition: .5s ease;
+    transition: .5s ease; }
+    .banner .slick-dots button:hover {
+      opacity: 1; }
+  .banner .slick-dots li.slick-active button {
+    opacity: 1; }
 /*# sourceMappingURL=style.css.map */

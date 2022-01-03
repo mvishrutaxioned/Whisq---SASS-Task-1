@@ -1,0 +1,69 @@
+.banner {
+    li { position: relative; }
+
+    .wrapper {
+        width: 40%;
+        margin: 0 auto;
+        @include flex;
+        flex-direction: column;
+        justify-content: center;
+        @include absolute;
+        text-align: center;
+        z-index: 20;
+
+        & h2 {
+            margin-top: 15px;
+            font-weight: 400;
+            font-family: "Damion", sans-serif;
+            font-size: 53px;
+            letter-spacing: .5px;
+        }
+
+        & p {
+            width: 90%;
+            margin-top: 35px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        & a {
+            padding: 11px 28px;
+            margin-top: 40px;
+            border-radius: 5px;
+            background: $white;
+            color: $black;
+            font-weight: 800;
+            font-size: 11px;
+            transition: .5s ease;
+
+            &:hover { background: darken($white, 10%); }
+        }
+    }
+
+    .slick-dots {
+        @include flex;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        bottom: 30px;
+        left: 0;
+
+        & button {
+            width: 9px;
+            height: 9px;
+            padding: 0;
+            margin: 0 2px;
+            border: none;
+            border-radius: 50%;
+            background: $black;
+            font-size: 0;
+            opacity: .3;
+            transition: .5s ease;
+
+            &:hover { opacity: 1; }
+        }
+
+        & li.slick-active button { opacity: 1; }
+    }
+}
