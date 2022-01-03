@@ -1,12 +1,10 @@
 header .wrapper {
   width: 88%;
   padding: 16px 0;
-
   @include responsive($ipad) {
     width: 95%;
     padding: 10px 0;
   }
-  
   @include flex;
   justify-content: space-between;
 
@@ -28,6 +26,8 @@ header .wrapper {
         @include icon;
         font-size: 20px;
       }
+
+      @include responsive($iphone) { font-size: 15px; }
     }
   }
 
