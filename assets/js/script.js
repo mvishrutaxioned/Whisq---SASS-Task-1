@@ -13,6 +13,16 @@ $(document).ready(() => {
         $('nav').toggleClass('showNav');
     })
 
+    // close video functionality by clicking outside
+    $(document).mouseup(function(e) {
+        var container = $("nav");
+        if (!container.is(e.target) && container.has(e.target).length === 0) 
+        {
+            $('nav').removeClass('showNav')
+            $('html, body').css("overflow", "visible")
+        }
+    });
+
     // stop scroll
     $('.menu').on('click', () => $('html, body').css('overflow', 'hidden'));
     $('.close').on('click', () => $('html, body').css('overflow', 'visible'));
