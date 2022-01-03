@@ -204,10 +204,19 @@ header .wrapper {
         background: #fff;
         z-index: 10;
         -webkit-transform: translateX(200%);
-                transform: translateX(200%); } }
+                transform: translateX(200%);
+        -webkit-transition: 1s ease;
+        transition: 1s ease; } }
+  @media screen and (max-width: 995px) and (max-width: 995px) {
+    header .wrapper nav.showNav {
+      -webkit-transform: translateX(0);
+              transform: translateX(0); } }
     @media screen and (max-width: 550px) {
       header .wrapper nav {
-        width: 60%; } }
+        width: 70%; } }
+    @media screen and (max-width: 320px) {
+      header .wrapper nav {
+        width: 100%; } }
     header .wrapper nav .navbar {
       width: 90%;
       display: -webkit-box;
@@ -916,4 +925,44 @@ footer {
     footer {
       padding: 5px 0 20px 0;
       font-size: 12px; } }
+
+/* toggleUp styling starts here */
+.toggleUp {
+  display: none;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  text-indent: -9999px;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  z-index: 20; }
+  .toggleUp::after {
+    content: '\f102';
+    padding: 10px 12px;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    text-indent: 0;
+    font-size: 14px;
+    opacity: .4;
+    text-indent: 0;
+    transition: .5s ease; }
+  .toggleUp:hover, .toggleUp:hover::after {
+    border-radius: 3px;
+    opacity: .8; }
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 /*# sourceMappingURL=style.css.map */
