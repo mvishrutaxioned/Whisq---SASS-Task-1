@@ -846,4 +846,8 @@ footer {
   background-color: #ececec;
   font-size: 15px;
   text-align: center; }
+  @media screen and (max-width: 550px) {
+    footer {
+      padding: 5px 0 20px 0;
+      font-size: 12px; } }
 /*# sourceMappingURL=style.css.map */

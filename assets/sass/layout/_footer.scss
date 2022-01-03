@@ -3,4 +3,9 @@ footer {
     background-color: $secondary;
     font-size: 15px;
     text-align: center;
+
+    @include responsive($iphone) {
+        padding: 5px 0 20px 0;
+        font-size: 12px;
+    }
 }
