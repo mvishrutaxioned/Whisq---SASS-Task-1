@@ -478,6 +478,7 @@ header .wrapper {
 .accessories .wrapper {
   margin: 40px auto; }
   .accessories .wrapper ul {
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -490,10 +491,23 @@ header .wrapper {
         -ms-flex-pack: justify;
             justify-content: space-between;
     gap: 20px; }
-  .accessories .wrapper li {
-    width: 49%;
-    border: 1px solid #dad8d8;
-    text-align: center; }
+    @media screen and (max-width: 767px) {
+      .accessories .wrapper ul {
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
+    .accessories .wrapper ul li {
+      width: 49%;
+      border: 1px solid #ececec;
+      text-align: center; }
+      @media screen and (max-width: 1280px) {
+        .accessories .wrapper ul li {
+          width: 48%; } }
+      @media screen and (max-width: 767px) {
+        .accessories .wrapper ul li {
+          width: 80%; } }
+      .accessories .wrapper ul li img {
+        width: 100%; }
   .accessories .wrapper a {
     margin: 24px auto;
     color: #000;
@@ -501,6 +515,10 @@ header .wrapper {
     font-size: 22px;
     -webkit-transition: .5s ease;
     transition: .5s ease; }
+    @media screen and (max-width: 767px) {
+      .accessories .wrapper a {
+        margin: 10px auto;
+        font-size: 16px; } }
     .accessories .wrapper a:hover {
       color: #666; }
 
