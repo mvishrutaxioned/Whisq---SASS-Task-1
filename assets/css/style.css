@@ -343,4 +343,84 @@ header .wrapper {
     transition: .5s ease; }
     .accessories .wrapper a:hover {
       color: #666; }
+
+.review {
+  position: relative; }
+  .review > ul {
+    width: 61%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 25%;
+    right: 4%;
+    bottom: 25%;
+    background-color: #f5f5f580; }
+    .review > ul::before {
+      content: '\f10d';
+      position: absolute;
+      top: -60px;
+      left: 5%;
+      color: #ba5c80;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 600;
+      -webkit-transition: .5s ease;
+      transition: .5s ease;
+      text-indent: 0;
+      font-size: 74px;
+      z-index: 10; }
+    .review > ul li {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 1.5% 2.8% 1% 2.8%;
+      position: relative;
+      font-weight: 600;
+      text-align: center; }
+      .review > ul li p {
+        margin-bottom: 50px;
+        font-size: 21px;
+        line-height: 30px; }
+      .review > ul li h2 {
+        font-size: 15px; }
+        .review > ul li h2::before {
+          content: '';
+          padding: 0 12px;
+          position: relative;
+          right: 15px;
+          bottom: 10px;
+          border-bottom: 2px solid #000; }
+  .review .slick-dots {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    top: 105%;
+    right: 0; }
+    .review .slick-dots li {
+      background: none; }
+    .review .slick-dots button {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      margin: 0 5px;
+      border-radius: 50%;
+      border: none;
+      background: #000;
+      text-indent: -9999px;
+      opacity: .2;
+      -webkit-transition: .5s ease;
+      transition: .5s ease; }
+      .review .slick-dots button:hover {
+        opacity: .6; }
+    .review .slick-dots li.slick-active button {
+      opacity: .6; }
 /*# sourceMappingURL=style.css.map */
