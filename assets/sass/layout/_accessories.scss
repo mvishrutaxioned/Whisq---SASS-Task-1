@@ -1,0 +1,26 @@
+.accessories .wrapper {
+    margin: 40px auto;
+    
+    ul {
+        @include flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    li {
+        width: 49%;
+        border: 1px solid #dad8d8;
+        text-align: center;
+    }
+
+    a {
+        margin: 24px auto;
+        color: $black;
+        font-weight: 600;
+        font-size: 22px;
+        transition: .5s ease;
+
+        &:hover { color: #666; }
+    }
+}

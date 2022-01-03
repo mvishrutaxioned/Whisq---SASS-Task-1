@@ -314,4 +314,33 @@ header .wrapper {
       opacity: 1; }
   .banner .slick-dots li.slick-active button {
     opacity: 1; }
+
+.accessories .wrapper {
+  margin: 40px auto; }
+  .accessories .wrapper ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 20px; }
+  .accessories .wrapper li {
+    width: 49%;
+    border: 1px solid #dad8d8;
+    text-align: center; }
+  .accessories .wrapper a {
+    margin: 24px auto;
+    color: #000;
+    font-weight: 600;
+    font-size: 22px;
+    -webkit-transition: .5s ease;
+    transition: .5s ease; }
+    .accessories .wrapper a:hover {
+      color: #666; }
 /*# sourceMappingURL=style.css.map */
