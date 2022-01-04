@@ -2,7 +2,8 @@ header {
   .wrapper {
     width: 88%;
     padding: 16px 0;
-    @include flex;
+    @include vendor(display, flex);
+    @include vendor(align-items, center);
     @include vendor(justify-content, space-between);
   
     @include responsive($ipad) {
@@ -19,7 +20,7 @@ header {
         z-index: 10;
         opacity: .8;
   
-        @include vendor(display, "none");
+        @include vendor(display, none);
       }
     }
 
@@ -81,7 +82,8 @@ header {
         background: $white;
         z-index: 20;
         
-        @include flex;
+        @include vendor(display, flex);
+        @include vendor(flex-direction, column);
         @include vendor(transition, 1s ease);
         @include vendor(transform, translateX(200%));
         
@@ -103,8 +105,9 @@ header {
           position: relative;
           top: 20%;
           left: 20%;
-          @include flex;
+          @include vendor(display, flex);
           @include vendor(flex-direction, column);
+          @include vendor(align-items, flex-start);
           @include vendor(justify-content, center);
         }
   
@@ -196,7 +199,7 @@ header {
 
         .flex { @include vendor(display, flex); }
   
-        & > li:hover .list { display: flex; }
+        & > li:hover .list { @include vendor(display, flex); }
       }
   
       .search {
