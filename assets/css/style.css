@@ -551,14 +551,16 @@ header .wrapper {
     font-family: "Damion", sans-serif;
     font-size: 53px;
     letter-spacing: .5px; }
-    @media screen and (max-width: 320px) {
-      .banner .wrapper h2 {
-        margin-top: 5px; } }
     @media screen and (max-width: 995px) {
       .banner .wrapper h2 {
         font-size: 40px; } }
+    @media screen and (max-width: 767px) {
+      .banner .wrapper h2 {
+        margin-top: 5px;
+        font-size: 28px; } }
     @media screen and (max-width: 550px) {
       .banner .wrapper h2 {
+        margin-top: 15px;
         font-size: 20px; } }
   .banner .wrapper p {
     width: 90%;
@@ -881,7 +883,7 @@ header .wrapper {
               bottom: 7px; } }
   .review .slick-dots {
     position: absolute;
-    top: 80%;
+    top: 104%;
     right: 0;
     -webkit-display: flex;
     -moz-display: flex;
@@ -897,8 +899,32 @@ header .wrapper {
             align-items: center; }
     @media screen and (max-width: 767px) {
       .review .slick-dots {
-        top: 81%; } }
+        top: 105%;
+        right: 0;
+        left: 0;
+        -webkit-display: flex;
+        -moz-display: flex;
+        -ms-display: flex;
+        -o-display: flex;
+        display: -webkit-box;
+        display: flex;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -o-align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
+    @media screen and (max-width: 320px) {
+      .review .slick-dots {
+        top: 103%; } }
     .review .slick-dots li {
+      padding: 0;
       background: none; }
     .review .slick-dots button {
       width: 10px;
