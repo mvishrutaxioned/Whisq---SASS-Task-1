@@ -1,202 +1,244 @@
-header .wrapper {
-  width: 88%;
-  padding: 16px 0;
+header {
+  .wrapper {
+    width: 88%;
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include vendor(display, "flex");
+    @include vendor(align-items, "center");
+    @include vendor(justify-content, "space-between");
   
-  @include responsive($ipad) {
-    width: 95%;
-    padding: 10px 0;
-  }
-
-  @include flex;
-  justify-content: space-between;
-
-  .menu,
-  .close {
-    display: none;
-    @include responsive($ipad) { display: initial; }
-  }
-
-  .menu {
-    font-size: 0;
-    cursor: pointer;
-
-    &::after {
-      @include responsive($ipad) {
-        content: '\f0c9';
-        color: $black;
-        font-size: 20px;
-        @include icon;
-      }
-      @include responsive($iphone) { font-size: 15px; }
-    }
-  }
-
-  .close {
     @include responsive($ipad) {
-      padding: 6px 14px;
-      border-radius: 4px;
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background: $secondary;
-      font-weight: 600;
-      cursor: pointer;
-    }
-  }
+      width: 95%;
+      padding: 10px 0;
 
-  h1 { width: 20%; }
-
-  img {
-    width: 105%;
-    @include responsive($ipad) { width: 50%; }
-  }
-
-  nav {
-    width: 80%;
-    @include flex;
-    @include responsive($ipad) {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background: $white;
-      z-index: 10;
-      transform: translateX(200%);
-      transition: 1s ease;
-
-      @include responsive($ipad) {
-        &.showNav { transform: translateX(0); }
-      }
-    }
-
-    @include responsive($iphone) { width: 70%; }
-    @include responsive($small-iphone) { width: 100%; }
-
-    .navbar {
-      width: 90%;
-      @include flex;
-
-      @include responsive($ipad) {
-        padding: 0;
-        margin: 0 auto;
-        @include flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      & > li:nth-child(1),
-      & > li:nth-child(2) {
-        margin-right: 15%;
-        @include responsive($ipad) { margin-right: 0; }
-      }
-
-      &> li:nth-child(1) {
-        .list {
-          @include responsive($ipad) {
-            top: 40%;
-          }
-        }
-      }
-
-      &> li:nth-child(2) {
-        .list {
-          @include responsive($ipad) {
-            top: 46%;
-          }
-        }
-      }
-
-      & > li:nth-child(3) {
-        margin-right: 9%;
-        @include responsive($ipad) { margin-right: 0; }
-      }
-
-      & > li {
-        @include responsive($ipad) {
-          padding: 0 0;
-          margin-right: 0;
-          text-align: center;
-        }
-      }
-
-      & > li > a {
-        box-sizing: border-box;
-        padding: 10px 0;
-        position: relative;
-        color: $black;
-        font-weight: 700;
-        font-size: 16px;
-        letter-spacing: .8px;
-        transition: .5s ease;
-
-        @include responsive($phone) { font-size: 12px; }
-        &:hover { color: $primary; }
-        @include responsive($phone) { &:hover {color: $black;} }
-      }
-
-      & > li:nth-child(1) > a::after,
-      & > li:nth-child(2) > a::after {
-        content: '\f078';
-        padding: 10px 0 10px 15px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        @include icon;
-        font-size: 20px;
-        transition: 0s;
-
-        @include responsive($ipad) {
-          padding: 12px 0 0 10px;
-          font-size: 12px;
-        }
-      }
-
-      .list {
-        width: auto;
-        padding: 10px 5px;
+      .layer {
         display: none;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 15%;
-        background-color: $secondary;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $black;
         z-index: 10;
-
-        li a {
-          padding: 10px 8px;
-          border-radius: 4px;
-          color: $black;
-          font-weight: 600;
-          font-size: 12px;
-        }
-
-        li a:hover { background: $white; }
-        @include responsive($phone) { li a:hover {background: $secondary}; }
+        opacity: .8;
+  
+        @include vendor(display, "none");
       }
-
-      & > li:hover .list { display: flex; }
     }
 
-    .search {
-      margin-left: auto;
-      display: inline;
+    .layer {
+      text-indent: -9999px;
+    }
+    
+    .menu,
+    .close {
+      display: none;
+      @include responsive($ipad) { display: initial; }
+    }
+  
+    .menu {
       font-size: 0;
-      @include responsive($ipad) { margin: 20px auto 0 auto; }
-
+      cursor: pointer;
+  
       &::after {
-        content: '\f002';
-        color: $black;
-        @include icon;
-        font-size: 19px;
-        @include responsive($phone) { font-size: 14px; }
+        @include responsive($ipad) {
+          content: '\f0c9';
+          color: $black;
+          font-size: 20px;
+          @include icon;
+        }
+  
+        @include responsive($iphone) { font-size: 15px; }
       }
+    }
+  
+    .close {
+      @include responsive($ipad) {
+        padding: 6px 14px;
+        border-radius: 4px;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: $secondary;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+  
+    h1 { width: 20%; }
+  
+    img {
+      width: 105%;
+      @include responsive($ipad) { width: 50%; }
+    }
+  
+    nav {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      z-index: 20;
+      @include vendor(display, "flex");
+      @include vendor(align-items, "center");
+  
+      @include responsive($ipad) {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: $white;
+        z-index: 20;
+        transform: translateX(200%);
+        transition: 1s ease;
+        
+        @include vendor(justify-content, "center");
+        @include vendor(transition, ".5s ease");
+        @include responsive($ipad) {
+          &.showNav { transform: translateX(0); }
+        }
+      }
+  
+      @include responsive($iphone) { width: 70%; }
+      @include responsive($small-iphone) { width: 100%; }
+  
+      .navbar {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        @include vendor(display, "flex");
+        @include vendor(align-items, "center");
+  
+        @include responsive($ipad) {
+          padding: 0;
+          margin: 0 auto;
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          position: relative;
+          top: 20%;
+          left: 20%;
+          @include vendor(display, "flex");
+          @include vendor(align-items, "flex-start");
+          @include vendor(justify-content, "center");
+        }
+  
+        & > li:nth-child(1),
+        & > li:nth-child(2) {
+          margin-right: 15%;
+          @include responsive($ipad) { margin-right: 0; }
+        }
+  
+        & > li:nth-child(3) {
+          margin-right: 9%;
+          @include responsive($ipad) { margin-right: 0; }
+        }
+  
+        & > li {
+          @include responsive($ipad) {
+            padding: 0 0;
+            margin-right: 0;
+            text-align: center;
+          }
+        }
+  
+        & > li > a {
+          box-sizing: border-box;
+          padding: 10px 0;
+          position: relative;
+          color: $black;
+          font-weight: 700;
+          font-size: 16px;
+          letter-spacing: .8px;
+          transition: .5s ease;
+          
+          &:hover { color: $primary; }
+          
+          @include vendor(transition, ".5s ease");
+          @include responsive($phone) { font-size: 12px; }
+          @include responsive($phone) { &:hover {color: $black;} }
+        }
+  
+        & > li:nth-child(1) > a::after,
+        & > li:nth-child(2) > a::after {
+          content: '\f078';
+          padding: 10px 0 10px 15px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          font-size: 20px;
+          transition: 0s;
+          @include icon;
+          
+          @include responsive($ipad) {
+            padding: 12px 0 0 10px;
+            font-size: 12px;
+          }
+        }
+  
+        .list {
+          width: auto;
+          padding: 10px 5px;
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          top: 15%;
+          background-color: $secondary;
+          z-index: 10;
 
-      &:hover::after { color: $primary; }
-      @include responsive($phone) { &:hover::after {color: $black;} }
+          @include responsive($ipad) {
+            position: static;
+          }
+
+          li a {
+            padding: 10px 8px;
+            border-radius: 4px;
+            color: $black;
+            font-weight: 600;
+            font-size: 12px;
+          }
+  
+          li a:hover { background: $white; }
+          @include responsive($phone) { li a:hover {background: $secondary}; }
+        }
+
+        .flex {
+          display: flex;
+          @include vendor(display, "flex");
+        }
+  
+        & > li:hover .list {
+          display: flex;
+        }
+      }
+  
+      .search {
+        margin-left: auto;
+        display: inline;
+        font-size: 0;
+        @include responsive($ipad) {
+          margin: 20px auto 0 0;
+          position: relative;
+          top: 20%;
+          left: 25%;
+        }
+  
+        &::after {
+          content: '\f002';
+          color: $black;
+          font-size: 19px;
+          @include icon;
+          @include responsive($phone) { font-size: 14px; }
+        }
+  
+        &:hover::after { color: $primary; }
+        @include responsive($phone) { &:hover::after {color: $black;} }
+      }
     }
   }
 }
