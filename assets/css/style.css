@@ -214,11 +214,11 @@ header .wrapper {
         background-color: #000;
         z-index: 10;
         opacity: .8;
-        -webkit-display: "none";
-        -moz-display: "none";
-        -ms-display: "none";
-        -o-display: "none";
-        display: "none"; } }
+        -webkit-display: none;
+        -moz-display: none;
+        -ms-display: none;
+        -o-display: none;
+        display: none; } }
   header .wrapper .layer {
     text-indent: -9999px; }
   header .wrapper .menu,
@@ -289,12 +289,12 @@ header .wrapper {
         -o-display: flex;
         display: -webkit-box;
         display: flex;
-        -moz-align-items: center;
-        -ms-align-items: center;
-        -o-align-items: center;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-direction: column;
         -webkit-transition: 1s ease;
         transition: 1s ease;
         -webkit-transform: translateX(200%);
@@ -336,18 +336,18 @@ header .wrapper {
           -o-display: flex;
           display: -webkit-box;
           display: flex;
-          -moz-align-items: center;
-          -ms-align-items: center;
-          -o-align-items: center;
-          -webkit-box-align: center;
-              -ms-flex-align: center;
-                  align-items: center;
           -moz-flex-direction: column;
           -ms-flex-direction: column;
           -o-flex-direction: column;
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
                   flex-direction: column;
+          -moz-align-items: flex-start;
+          -ms-align-items: flex-start;
+          -o-align-items: flex-start;
+          -webkit-box-align: start;
+              -ms-flex-align: start;
+                  align-items: flex-start;
           -moz-justify-content: center;
           -ms-justify-content: center;
           -o-justify-content: center;
@@ -455,8 +455,11 @@ header .wrapper {
         display: -webkit-box;
         display: flex; }
       header .wrapper nav .navbar > li:hover .list {
+        -webkit-display: flex;
+        -moz-display: flex;
+        -ms-display: flex;
+        -o-display: flex;
         display: -webkit-box;
-        display: -ms-flexbox;
         display: flex; }
     header .wrapper nav .search {
       margin-left: auto;
