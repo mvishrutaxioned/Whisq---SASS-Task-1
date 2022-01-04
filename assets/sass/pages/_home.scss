@@ -1,22 +1,17 @@
-@import '../layout/header';
-
+/* banner styling starts here */
 .banner {
     li { position: relative; }
 
     .wrapper {
         width: 40%;
         margin: 0 auto;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
         text-align: center;
         z-index: 20;
         
         @include absolute;
-        @include vendor(justify-content, "center");
-        @include vendor(display, "flex");
-        @include vendor(align-items, "center");
+        @include flex;
+        @include vendor(flex-direction, column);
+        @include vendor(justify-content, center);
         @include responsive($iphone) { justify-content: flex-start; }
         @include responsive($small-pc) { width: 50%; }
         @include responsive($ipad) { width: 70%; }
@@ -59,8 +54,8 @@
             color: $black;
             font-weight: 800;
             font-size: 11px;
-            transition: .5s ease;
-            @include vendor(transition, ".5s ease");
+
+            @include vendor(transition, .5s ease);
 
             @include responsive($ipad) {
                 margin-top: 20px;
@@ -78,16 +73,12 @@
     }
 
     .slick-dots {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         position: absolute;
         right: 0;
         bottom: 30px;
         left: 0;
-        @include vendor(display, "flex");
-        @include vendor(align-items, "center");
-        @include vendor(justify-content, "center");
+        @include flex;
+        @include vendor(justify-content, center);
         @include responsive($ipad) { bottom: 10px; }
         @include responsive($iphone) { bottom: 4px; }
 
@@ -101,8 +92,7 @@
             background: $black;
             font-size: 0;
             opacity: .3;
-            transition: .5s ease;
-            @include vendor(transition, ".5s ease");
+            @include vendor(transition, .5s ease);
 
             &:hover { opacity: 1; }
 
@@ -117,26 +107,22 @@
         & li.slick-active button { opacity: 1; }
     }
 }
+/* banner styling ends here */
 
+/* accessories styling starts here */
 .accessories .wrapper {
     margin: 40px auto;
 
     ul {
         width: 100%;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
         gap: 20px;
-        justify-content: space-between;
 
-        @include vendor(display, "flex");
-        @include vendor(align-items, "center");
-        @include vendor(flex-wrap, "wrap");
-        @include vendor(justify-content, "space-between");
+        @include flex;
+        @include vendor(flex-wrap, wrap);
+        @include vendor(justify-content, space-between);
 
         @include responsive($phone) { 
-            justify-content: center;
-            @include vendor(justify-content, "center");
+            @include vendor(justify-content, center);
         }
 
         li {
@@ -155,63 +141,60 @@
 
                 &::before {
                     content: '\f35a';
-                    display: none;
-                    align-items: center;
-                    justify-content: center;
                     background: #69686880;
                     color: $white;
                     font-size: 40px;
                     z-index: 10;
-                    
-                    @include vendor(display, "flex");
-                    @include vendor(align-items, "center");
-                    @include vendor(justify-content, "center");
+                    opacity: 0;
+
+                    @include flex;
+                    @include vendor(justify-content, center);
                     @include absolute;
                     @include icon;
                 }
             }
 
             &:hover {
-                figure::before { display: flex; }
+                figure::before {
+                    opacity: 1;
+                    @include vendor(transition, opacity .7s ease);
+                }
             }
 
             img { width: 100%; }
 
             a > figcaption {
-                margin: 24px 0;
+                padding: 24px 0;
                 color: $black;
                 font-weight: 600;
                 font-size: 22px;
-                transition: .5s ease;
                 
                 @include responsive($phone) {
                     margin: 10px auto;
                     font-size: 16px;
                 }
                 
-                @include vendor(transition, ".5s ease");
+                @include vendor(transition, .5s ease);
             }
         }
     }
 }
+/* accessories styling ends here */
 
+/* reviews styling starts here */
 .review {
     position: relative;
 
     & > ul {
         width: 61%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         position: absolute;
         top: 25%;
         right: 4%;
         bottom: 25%;
         background-color: #f5f5f580;
         
-        @include vendor(display, "flex");
-        @include vendor(align-items, "center");
-        @include vendor(justify-content, "center");
+        @include flex;
+        @include vendor(justify-content, center);
 
         @include responsive($ipad) {
             width: 70%;
@@ -308,14 +291,11 @@
     }
 
     .slick-dots {
-        display: flex;
-        align-items: center;
         position: absolute;
         top: 80%;
         right: 0;
 
-        @include vendor(display, "flex");
-        @include vendor(align-items, "center");
+        @include flex;
         @include responsive($phone) { top: 81%; }
 
         li { background: none; }
@@ -330,9 +310,10 @@
             background: $black;
             text-indent: -9999px;
             opacity: .2;
-            transition: .5s ease;
+
             &:hover { opacity: .6; }
-            @include vendor(transition, ".5s ease");
+
+            @include vendor(transition, .5s ease);
             
             @include responsive($phone) { &:hover { opacity: .2; } }
 
@@ -346,7 +327,9 @@
         li.slick-active button { opacity: .6; }
     }
 }
+/* reviews styling ends here */
 
+/* recipes styling starts here */
 .recipes .wrapper {
     margin: 40px auto;
     text-align: center;
@@ -380,20 +363,16 @@
     }
 
     ul {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         gap: 6%;
         
-        @include vendor(display, "flex");
-        @include vendor(align-items, "center");
-        @include vendor(justify-content, "space-between");
+        @include flex;
+        @include vendor(justify-content, space-between);
         @include responsive($ipad) { gap: 1%; }
 
         @include responsive($phone) {
-            flex-direction: column;
+            @include vendor(flex-direction, column);
+            @include vendor(justify-content, center);
             gap: 0;
-            justify-content: center;
         }
     }
 
@@ -497,7 +476,9 @@
         }
     }
 }
+/* recipes styling ends here */
 
+/* gallery styling starts here */
 .gallery {
     margin: 50px auto 20px auto;
     border-bottom: 2px solid $secondary;
@@ -505,18 +486,14 @@
 
     ul {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
-        @include vendor(display, "flex");
-        @include vendor(align-items, "center");
-        @include vendor(justify-content, "center");
-        @include responsive($phone) { flex-wrap: wrap; }
+        @include flex;
+        @include vendor(justify-content, center);
+        @include responsive($phone) { @include vendor(flex-wrap, wrap); }
         
         @include responsive($iphone) {
-            flex-direction: column;
-            flex-wrap: nowrap;
+            @include vendor(flex-direction, column);
+            @include vendor(flex-wrap, nowrap);
         }
     }
 
@@ -536,11 +513,10 @@
         color: $white;
         font-weight: 600;
         font-size: 11px;
-        transition: .5s ease;
         
         &:hover { background: lighten($primary, 10%); }
         
-        @include vendor(transition, ".5s ease");
+        @include vendor(transition, .5s ease);
 
         @include responsive($iphone) {
             padding: 10px 25px;
@@ -550,5 +526,4 @@
         @include responsive($phone) { &:hover { background: $primary; } }
     }
 }
-
-@import '../layout/footer';
+/* gallery styling ends here */

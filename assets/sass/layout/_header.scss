@@ -2,19 +2,14 @@ header {
   .wrapper {
     width: 88%;
     padding: 16px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    @include vendor(display, "flex");
-    @include vendor(align-items, "center");
-    @include vendor(justify-content, "space-between");
+    @include flex;
+    @include vendor(justify-content, space-between);
   
     @include responsive($ipad) {
       width: 95%;
       padding: 10px 0;
 
       .layer {
-        display: none;
         position: fixed;
         top: 0;
         right: 0;
@@ -28,9 +23,7 @@ header {
       }
     }
 
-    .layer {
-      text-indent: -9999px;
-    }
+    .layer { text-indent: -9999px; }
     
     .menu,
     .close {
@@ -76,27 +69,22 @@ header {
   
     nav {
       width: 80%;
-      display: flex;
-      align-items: center;
       z-index: 20;
-      @include vendor(display, "flex");
-      @include vendor(align-items, "center");
+      @include flex;
   
       @include responsive($ipad) {
         width: 50%;
-        display: flex;
-        flex-direction: column;
         position: fixed;
         top: 0;
         right: 0;
         bottom: 0;
         background: $white;
         z-index: 20;
-        transform: translateX(200%);
-        transition: 1s ease;
         
-        @include vendor(justify-content, "center");
-        @include vendor(transition, ".5s ease");
+        @include flex;
+        @include vendor(transition, 1s ease);
+        @include vendor(transform, translateX(200%));
+        
         @include responsive($ipad) {
           &.showNav { transform: translateX(0); }
         }
@@ -107,24 +95,17 @@ header {
   
       .navbar {
         width: 90%;
-        display: flex;
-        align-items: center;
-        @include vendor(display, "flex");
-        @include vendor(align-items, "center");
+        @include flex;
   
         @include responsive($ipad) {
           padding: 0;
           margin: 0 auto;
-          display: flex;
-          align-items: flex-start;
-          flex-direction: column;
-          justify-content: center;
           position: relative;
           top: 20%;
           left: 20%;
-          @include vendor(display, "flex");
-          @include vendor(align-items, "flex-start");
-          @include vendor(justify-content, "center");
+          @include flex;
+          @include vendor(flex-direction, column);
+          @include vendor(justify-content, center);
         }
   
         & > li:nth-child(1),
@@ -142,7 +123,7 @@ header {
           @include responsive($ipad) {
             padding: 0 0;
             margin-right: 0;
-            text-align: center;
+            text-align: left;
           }
         }
   
@@ -154,12 +135,11 @@ header {
           font-weight: 700;
           font-size: 16px;
           letter-spacing: .8px;
-          transition: .5s ease;
           
           &:hover { color: $primary; }
           
-          @include vendor(transition, ".5s ease");
-          @include responsive($phone) { font-size: 12px; }
+          @include vendor(transition, .5s ease);
+          @include responsive($ipad) { font-size: 12px; }
           @include responsive($phone) { &:hover {color: $black;} }
         }
   
@@ -184,15 +164,17 @@ header {
           width: auto;
           padding: 10px 5px;
           display: none;
-          flex-direction: column;
-          align-items: center;
           position: absolute;
-          top: 15%;
+          top: 90px;
           background-color: $secondary;
           z-index: 10;
 
+          @include vendor(flex-direction, column);
+          @include vendor(align-items, center);
+
           @include responsive($ipad) {
             position: static;
+            top: 80px;
           }
 
           li a {
@@ -201,20 +183,20 @@ header {
             color: $black;
             font-weight: 600;
             font-size: 12px;
+
+            @include responsive($ipad) {
+              padding: 5px 8px;
+              font-size: 12px;
+            }
           }
   
           li a:hover { background: $white; }
           @include responsive($phone) { li a:hover {background: $secondary}; }
         }
 
-        .flex {
-          display: flex;
-          @include vendor(display, "flex");
-        }
+        .flex { @include vendor(display, flex); }
   
-        & > li:hover .list {
-          display: flex;
-        }
+        & > li:hover .list { display: flex; }
       }
   
       .search {
