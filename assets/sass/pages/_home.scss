@@ -25,9 +25,15 @@
             font-size: 53px;
             letter-spacing: .5px;
 
-            @include responsive($small-iphone) { margin-top: 5px; }
             @include responsive($ipad) { font-size: 40px; }
-            @include responsive($iphone) { font-size: 20px;}
+            @include responsive($phone) {
+                margin-top: 5px;
+                font-size: 28px;
+            }
+            @include responsive($iphone) {
+                margin-top: 15px;
+                font-size: 20px;
+            }
         }
 
         & p {
@@ -292,13 +298,24 @@
 
     .slick-dots {
         position: absolute;
-        top: 80%;
+        top: 104%;
         right: 0;
 
         @include flex;
-        @include responsive($phone) { top: 81%; }
+        @include responsive($phone) {
+            top: 105%;
+            right: 0;
+            left: 0;
+            @include flex;
+            @include vendor(justify-content, center)
+        }
 
-        li { background: none; }
+        @include responsive($small-iphone) { top: 103%; }
+
+        li {
+            padding: 0;
+            background: none;
+        }
 
         button {
             width: 10px;
