@@ -1,45 +1,11 @@
 footer {
-  padding: 5px 0 35px 0;
-  background-color: $secondary;
-  font-size: 15px;
-  text-align: center;
+    padding: 5px 0 35px 0;
+    background-color: $secondary;
+    font-size: 15px;
+    text-align: center;
 
-  @include responsive($iphone) {
-      padding: 5px 0 20px 0;
-      font-size: 12px;
-  }
+    @include responsive($iphone) {
+        padding: 5px 0 20px 0;
+        font-size: 12px;
+    }
 }
-
-
-/* toggleUp styling starts here */
-.toggleUp {
-  display: none;
-  justify-content: flex-end;
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  text-indent: -9999px;
-  transition: .5s ease;
-  z-index: 20;
-
-  &::after {
-      content: '\f102';
-      padding: 10px 12px;
-      border-radius: 3px;
-      background: $black;
-      color: $white;
-      @include icon;
-      font-size: 14px;
-      opacity: .4;
-      text-indent: 0;
-      transition: .5s ease;
-  }
-
-  &:hover,
-  &:hover::after {
-      border-radius: 3px;
-      opacity: .8;
-  }
-}
-
-.flex { @include flex;}
