@@ -65,9 +65,4 @@ body {
   }
 }
 
-.flex {
-  display: flex;
-  align-items: center;
-  @include vendor(display, "flex");
-  @include vendor(align-items, "center");
-}
+.flex { @include flex; }
