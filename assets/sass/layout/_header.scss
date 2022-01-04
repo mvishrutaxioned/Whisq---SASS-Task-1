@@ -24,8 +24,8 @@ header .wrapper {
       @include responsive($ipad) {
         content: '\f0c9';
         color: $black;
-        @include icon;
         font-size: 20px;
+        @include icon;
       }
       @include responsive($iphone) { font-size: 15px; }
     }
